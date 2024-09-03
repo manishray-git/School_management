@@ -1,0 +1,36 @@
+    /* Define the animation for the initial appearance */
+
+    @keyframes fadeInAndScale {
+        0% {
+            opacity: 0;
+            transform: scale(0.5) rotate(0deg);
+        }
+        100% {
+            opacity: 1;
+            transform: scale(1) rotate(0deg);
+        }
+    }
+
+    /* Define the hover animation */
+    @keyframes rotateAndScale {
+        0% {
+            transform: scale(1) rotate(0deg);
+        }
+        50% {
+            transform: scale(1.2) rotate(20deg);
+        }
+        100% {
+            transform: scale(1) rotate(0deg);
+        }
+    }
+
+    /* Apply the initial appearance animation */
+    .animated-edit-button {
+        display: inline-block;
+        animation: fadeInAndScale 0.8s ease;
+    }
+
+    /* Apply the hover effect */
+    .animated-edit-button:hover i {
+        animation: rotateAndScale 0.6s ease;
+    }

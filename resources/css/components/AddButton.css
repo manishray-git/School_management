@@ -1,0 +1,77 @@
+/* Container for the button */
+.add-user-container {
+    display: flex;
+    justify-content: center;
+    margin: 2px;
+}
+
+/* Add User Button Styles */
+.add-user-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #28a745; /* Green background */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* For better animation effect */
+    white-space: nowrap; /* Prevent text from wrapping */
+    text-overflow: ellipsis; /* Handle overflow text */
+}
+
+/* Icon Styles */
+.add-user-button i {
+    margin-right: 10px;
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+/* Hover Effects */
+.add-user-button:hover {
+    background-color: #218838; /* Darker green on hover */
+    transform: scale(1.05); /* Slightly enlarge the button */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.add-user-button:hover i {
+    transform: rotate(360deg); /* Rotate the icon on hover */
+}
+
+/* Button Animation */
+.add-user-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+    transition: transform 0.5s ease;
+}
+
+.add-user-button:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .add-user-button {
+        font-size: 14px; /* Slightly smaller text for smaller screens */
+        padding: 10px 16px; /* Adjust padding */
+        white-space: normal; /* Allow text to wrap */
+        text-align: center; /* Center align text */
+    }
+
+    .add-user-button i {
+        font-size: 16px; /* Slightly smaller icon */
+        margin-right: 8px; /* Adjust margin for smaller screens */
+    }
+}
