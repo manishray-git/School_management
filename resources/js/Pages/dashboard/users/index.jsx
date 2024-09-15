@@ -3,10 +3,16 @@ import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 import { Head } from "@inertiajs/react";
 import Table from "@/Components/Table";
 import AddButton from "@/Components/AddButton";
+import AddUser from "./AddUser";
+import { Modal } from 'flowbite';
+
+
 
 export default function index(users) {
     const [usersList, setUsers] = useState(users.users);
     const columns = ["name", "email"];
+
+        
 
     return (
         <div>
@@ -19,20 +25,22 @@ export default function index(users) {
             >
                 <Head title="Dashboard" />
 
-                <div className=" w-screen p-10  h-screen ">
-                    <div className="max-w-7xl mx-auto sm:px-6 lg:px-8  bg-white ml-10 p-4 rounded-md mt-20 flex flex-col space-y-2">
+                <div className="">
+                    <div className="max-w-7xl mx-auto   ml-10 p-4 rounded-md mt-20 flex flex-col space-y-2">
                         <div className=" flex justify-end px-10">
                             <AddButton
+                              
                                 label="Add User"
                                 iconClass="fas fa-user-plus mr-2"
-                                className="custom-class "
-                                route="/add-user"
+                                className="custom-class addbtn"
+                             
                             />
                         </div>
 
-                        <Table data={usersList} columns={columns}></Table>
+                        <Table data={usersList.data} columns={columns}></Table>
                     </div>
                 </div>
+                <AddUser ></AddUser>
             </AuthenticatedLayout>
         </div>
     );

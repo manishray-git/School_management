@@ -16,7 +16,7 @@ export default function Authenticated({ user, header, children }) {
             <Sidebar/>
             </div>
             
-            <main>{children}</main>
+            <main className=' w-screen   h-screen '>{children}</main>
         </div>
     );
 }

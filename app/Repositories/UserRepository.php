@@ -7,7 +7,8 @@ class UserRepository implements UserInterface {
 
 
     public function getAllUsers(){
-        return User::all();
+       return  User::paginate(8);
+
     }
 
 }

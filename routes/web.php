@@ -24,11 +24,11 @@ Route::get('/data-deletion-status/{confirmation_code}', [SocialController::class
 Route::get('login/{provider}/callback',[SocialController::class,'callback'])->name('social');
 
 
-//Google Login
-Route::get('/auth/google/redirect', [SocialController::class,'googleRedirect'])->name('googlelogin');
+// //Google Login
+// Route::get('/auth/google/redirect', [SocialController::class,'googleRedirect'])->name('googlelogin');
 
-//Google Login
-Route::get('/auth/google/callback', [SocialController::class,'handleGoogleCallback']);
+// //Google Login
+// Route::get('/auth/google/callback', [SocialController::class,'handleGoogleCallback']);
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
@@ -38,9 +38,9 @@ Route::get('/dashboard', function () {
 
 
 Route::group(['prefix'=>"dashboard"],function(){
-
     Route::controller(Usercontroller::class)->group(function(){
            Route::get('/users','index')->name('users.index');
+           Route::post('/users/store','store')->name('users.store');
     });
 
 
